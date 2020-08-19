@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .selected {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+  <script>
+    // Bad
+    // const lis = document.querySelectorAll('li');
+    // lis.forEach(li => {
+    //   li.addEventListener('click', () => {
+    //     li.classList.add('selected');
+    //   });
+    // });
+
+    // Coooooooool 🙌
+    const ul = document.querySelector('ul');
+    ul.addEventListener('click', event => {
+      if (event.target.tagName == 'LI') {
+        event.target.classList.add('selected');
+      }
+    });
+      //부모 안에 있는 자식들에게 이벤트 리스너를 추가할 때, 이벤트 리스너를 각각 등록하는 것보다 부모에 등록하는 것이 좋음. 이벤트에는 curretTarget과 target이 있기 때문에 원하는 target에만 집중적으로 처리를 해줄 수 있기 때문에 event delegation을 사용하는 것이 좋음!
+  </script>
+</body>
+
+</html>

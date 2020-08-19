@@ -1,0 +1,25 @@
+APIs: Application Programming Interfaces
+
+DOM(Document Object Model) APIs : 웹 페이지에 있는 요소들을 생성, 삭제, 스타일을 바꾸는 등의 조작 기능
+Network APIs: 서버와 통신
+Graphics APIs: 그래픽 관련 APIs
+Audio/Video APIs
+Device APIs: 사용자가 온라인인지 오프라인인지, 디바이스의 상태 정보를 받아옴
+File APIs: 사용자 파일을 읽거나 저장
+Storage APIs: 사용자 정보 저장하는 Storage관련 APIs
+Web APIs Security: 사용자의 권한 요청이나 Https를 요구할 수 있음
+
+HTTP: 웹 클라이언트와 서버가 어떻게 통신하는지 통신 규약을 정해놓은 것임. 클라이언트가 서버에게 정보를 요청하고 서버에서 정보를 받아오는 request와 response로 이루어져있음
+
+HTTPS: Hypertext Transfer Protocol Secure. 즉, 정보를 주고 받는 것들이 보안 처리가 잘 된 아이임. 암호키를 이용해서 보안 처리가 됨.
+
+
+// Browser 구조 분석 //
+
+Window: 전체적인 Object. 브라우저에서 현재 열려있는 전체적인 창 의미
+Document: Window안의 페이지가 표기되는 부분. 즉, HTML에서 작성된 부분들이 보여지는 부분
+Navigator: 사용자들의 눈에 보이지는 않지만 브라우저의 정보를 담고 있는 부분
+BOM (Browser Object Model)
+
+Window는 글로벌 오브젝트이기 때문에 아무런 오브젝트를 지정하지 않은 경우 window가 기본으로 지정됨. ex)innerWidth라고 해도 기본적으로 Window의 innerWidth가 뜸.
+size, scrolling, road 등을 확인할 때 window를 많이 씀

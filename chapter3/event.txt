@@ -1,0 +1,6 @@
+event: mouse click, keyboard, resizing window, close window, page loading, form submission, error, .... 굉장히 다양한 이벤트들이 있음
+
+특정 요소에 Event Handler를 등록 해 놓고, 나중에 사용자가 클릭을 하게 돠면 브라우저에서 이벤트라는 Object를 만들어서 이 이벤트 오브젝트에는 어떤 부분에서 클릭이 되었는지, 어떤 요소가 크릭이 되었는지 등 다양한 정보가 들어있는 이 이벤트 오브젝트를 ㅜㅇ리가 등록한 콜백 함수에 전달하주게 됨. 
+모든 요소에 이벤트 핸들러를 등록할 수 있음.
+
+dispatchEvent(new Event('이벤트 종류')); 를 하게 되면 인공적으로 이벤트를 발생시켜줌 

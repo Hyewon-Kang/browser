@@ -1,0 +1,10 @@
+coordinates(좌표)
+Element.getBoundingClientRect();
+Element는 DOM에 들어있는 모든 요소들 (ex.이미지, 텍스트 등등)
+top과 left, width, height, bottom, right이 있음.
+
+
+Client x,y vs Page x,y
+Client x,y는 사용자가 클릭한 지점이 브라우저에서 얼마나 떨어져 있는지가 전달됨.
+Page x,y는 사용자가 클릭한 지점이 페이지 자체에서 떨어져있는 x,y를 의미함 (y는 제일 위에서부터 지정됨. 페이지의 시작부분 부터)
+Client는 Window에 의해서 결정이 되고 Page는 문서의 시작점부터 계산됨.

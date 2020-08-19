@@ -1,0 +1,13 @@
+window.addEventListener('DOMContentLoaded', () => {});
+window.addEventListener('load', () => {});
+window.addEventListener('beforeload', () => {});
+window.addEventListener('unload', () => {});
+
+DOMContentLoaded
+ => Document 즉, html만 모두 load되면 호출됨 페이지에 컨텐츠가 많은 경우 DOMContentLoaded가 조금 더 빨리 로딩됨
+load
+ => 페이지에서 사용하는 css, 이미지 등 모든 것들이 load되면 호출됨. (모든 리소스가 다운되고 난 다음 발생)
+beforeload
+ => unload가 되기 전에 호출됨. 사용자가 페이지를 나가기 전에 호출됨.
+unload
+ => 리소스가 unload 되었을 때 호출됨

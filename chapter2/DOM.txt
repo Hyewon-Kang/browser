@@ -1,0 +1,6 @@
+HTML tag => JavaScript Node
+
+Node는 EventTarget이라는 오브젝트를 상속함. 
+document, element, text, ... 등등은 Node를 상속함
+
+html 태그에는 그에 상응하는 DOM Tree가 있음

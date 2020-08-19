@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    div {
+      width: 250px;
+      height: 250px;
+      background-color: yellow;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="checkbox" />
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <script>
+    document.addEventListener('wheel', event => {
+      console.log('scrolling');
+      event.preventDefault();
+    }, { passive: false }); //기본적으로 passive가 true로 설정이되어있기 때문에 따로 passive를 false로 설정해야지 prevetDefault가 호출이 됨. 하지만 passive가 true로 설정이 되어 있는 아이들은 true로 사용하는 것이 좋음! 
+    const checkbox = document.querySelector('input');
+    checkbox.addEventListener('click', event => {
+      // long
+      console.log('checked');
+      event.preventDefault(); //브라우저에서 발생하는 기본적인 동작을 취소시킴
+    });
+  </script>
+</body>
+
+</html>
