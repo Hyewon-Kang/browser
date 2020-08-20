@@ -3,7 +3,32 @@
 import * as sound from "./sound.js";
 import Field from "./field.js";
 
-export default class Game {
+// Builder Pattern
+// 오브젝트를 만들 때, Builder Pattern을 이용해서 오브젝트를 간단명료하게, 가독성 좋게 만들 수 있음. 
+export default class GameBuilder {
+    gameDuration(duration) {
+        this.gameDuration = duration;
+        return this;
+    }
+
+    carrotCount(num) {
+        this.carrotCount = num;
+        return this;
+    }
+
+    bugCount(num) {
+        this.bugCount = num;
+        return this;
+    }
+
+    build() {
+        return new Game(this.gameDuration,
+            this.carrotCount,
+            this.bugCount)
+    }
+}
+
+class Game {
     constructor(gameDuration, carrotCount, bugCount) {
         this.gameDuration = gameDuration;
         this.carrotCount = carrotCount;
