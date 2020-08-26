@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Let's dance!</button>
+    <div class="box"></div>
+    <script>
+        const button = document.querySelector('button');
+        const box = document.querySelector('.box');
+        button.addEventListener('click', () => {
+            box.style.transition = 'transform 1s ease-in';
+            box.style.transform = 'translateX(800px)';
+            box.style.transform = 'translateX(500px)';
+            box.style.backgroundColor = 'blue';
+            box.style.backgroundColor = 'red';
+            box.style.backgroundColor = 'yellow';
+        });
+        /*
+            box가 500px까지만 가고 다시 돌아오는게 잘 안되는 이유는?
+            => translate를 얼마나 자주 업데이트 하든지 상관 없이 결국 렌더링이 발생할 때는 최종적으로 트랜스폼에 할당된 아이가 적용이 되기 때문임.
+        */
+    </script>
+</body>
+
+</html>

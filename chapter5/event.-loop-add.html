@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Click to add</button>
+    <script>
+        const button = document.querySelector('button');
+        button.addEventListener('click', () => {
+            const element = document.createElement('h1');
+            element.body.appendChild(element);
+            element.style.color = 'red';
+            element.innerText = 'hello';
+            /*
+                콜백 안에서 작성된 코드는 어떤 순서를 하든 상관 없음.
+                왜냐하면 이 콜백이 콜백 스택에 들어가는 순간 이벤트 루프는 이것이 다 실행될 때까지 기다렸다가
+                나중에 렌더링이 될 때 전체적으로 적용된 아이들이 레이아웃 페인트에 걸쳐서 브라우저에 표기되기 때문임. 
+                => 콜백 안에 들어있는 것은 자바스크립트 엔진이 콜백에 들어있는 코드 블럭이 다 완료 될 때까지 기다렸다가 나중에 렌더링이 발생하기 때문
+            */
+        });
+    </script>
+</body>
+
+</html>
