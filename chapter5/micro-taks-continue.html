@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            font-size: 60px;
+        }
+
+        button:hover {
+            background-color: antiquewhite;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Continue With promise</button>
+    <script>
+        function handleClick() {
+            console.log('handleClick');
+            Promise.resolve(0)
+                .then(() => {
+                    console.log('then');
+                    handleClick();
+                });
+        }
+        const button = document.querySelector('button');
+        button.addEventListener('click', () => {
+            handleClick();
+        });
+        /*
+            로그가 무한정으로 출력이 되면서 브라우저 화면은 멈추게 됨
+            리스너에 등록된 콜백을 웹 APIs가 Task Queue에 보내고
+            Task Queue에 들어온 콜백이 이벤트 루프에 의해 Call Stack으로 옮겨감.
+            Call Stack에서 Promise를 만들고 promise의 then도 등록이 됨.
+            then은 나중에 프로미스가 완료되면 micro task queue에 들어감.
+            then 안에서 반복적으로 다른 then을 호출하면 브라우저가 반응을 하지 않는 문제가 발생할 수 있음.
+
+            Taks Queue는 하나씩 옮겨놓고 다시 순환하는 반면,
+            Micro Task Queue는 새로 추가되는 아이들까지 모두 실행이 될 때까지 기다렸다가 다시 순환함.
+        */
+    </script>
+</body>
+
+</html>
